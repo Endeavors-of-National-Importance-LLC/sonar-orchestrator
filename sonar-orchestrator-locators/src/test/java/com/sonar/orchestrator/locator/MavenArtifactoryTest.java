@@ -80,7 +80,7 @@ public class MavenArtifactoryTest {
 
     Artifactory underTest = getMavenArtifactory();
 
-    File targetFile = temp.newFile();
+    File targetFile = new File(temp.newFolder(), "downloaded.jar");
     boolean found = underTest.downloadToFile(SONAR_PLUGIN_API, targetFile);
 
     assertThat(found).isTrue();
